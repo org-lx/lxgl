@@ -1,0 +1,3 @@
+[submodule "lx/lxxml"]
+	path = lx/lxxml
+	url = https://github.com/org-lx/lxxml

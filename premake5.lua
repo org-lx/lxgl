@@ -1,16 +1,18 @@
-workspace "lxtemplate"
+workspace "lxgl"
    architecture "x86_64"
    configurations { "Debug", "Release"}
 
-project "lxtemplate"
+include "lx"
+
+project "lxgl"
    kind "ConsoleApp"
    language "C"
    cdialect "c99"
    targetdir "bin"
-   includedirs { "include" }
+   includedirs { "include", "lx/lxxml/include" }
    files { "src/**.c", "include/**.h" }
    
-   -- links {  }
+   links { "lxxml", "curl" }
 
    filter "configurations:Debug"
       defines { "DEBUG" }
